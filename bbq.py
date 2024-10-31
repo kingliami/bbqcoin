@@ -65,8 +65,8 @@ headers = {
     'x-requested-with': 'org.telegram.messenger',
 }
 
-# Set taps to 15000
-taps = '15000'
+# Set taps to 15000000000
+taps = '15000000000'
 
 # Function to send tap request
 def bbq_tap():
