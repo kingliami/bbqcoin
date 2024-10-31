@@ -66,7 +66,7 @@ headers = {
 }
 
 # Set taps to 15000
-taps = '150000000'
+taps = '1500000'
 
 # Function to send tap request
 def bbq_tap():
