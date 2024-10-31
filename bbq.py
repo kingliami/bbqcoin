@@ -1,3 +1,25 @@
+import subprocess
+import sys
+
+# Define required modules
+required_modules = ['base64', 'time', 'json', 'requests', 'urllib.parse', 'Crypto']
+
+# Function to install missing packages
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Check if modules are installed; if not, install them
+for module in required_modules:
+    try:
+        __import__(module)
+    except ImportError:
+        print(f"Module {module} not found. Installing...")
+        if module == 'Crypto':
+            install('pycryptodome')  # Install pycryptodome for Crypto
+        else:
+            install(module)
+
+# Imports after ensuring installation
 import base64
 import time
 import json
